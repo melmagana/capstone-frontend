@@ -68,10 +68,32 @@ export default class App extends Component {
          console.error(err)
       }
    }
+   logout = async () => {
+      try {
+         const url = process.env.REACT_APP_API_URL + '/api/v1/users/logout'
+         const logoutResponse = await fetch(url, {
+            credentials: 'include'
+         })
+         console.log('logoutResponse', logoutResponse)
+         const logoutJson = await logoutResponse.json()
+         console.log('logoutJson', logoutJson)
+
+         if(logoutResponse.status === 200) {
+            this.setState({
+               loggedIn: false,
+               loggedInName: ''
+            })
+         }
+      } catch(err) {
+         console.error('Error trying to logout with API')
+         console.error(err)
+      }
+   }
    render() {
       return (
          <div className="App">
             <h1>Hello, World!</h1>
+            <span onClick={this.logout}>Logout</span>
             <RegisterLoginForm 
                register={this.register}
                login={this.login}
