@@ -1,6 +1,24 @@
 import React, {Component} from 'react'
 
 export default class RegisterLoginForm extends Component {
+	constructor() {
+		super()
+
+		this.state = {
+			name: '',
+			city: '',
+			state: '',
+			country: '',
+			email: '',
+			password: '',
+			shelter: false
+		}
+	}
+	handleChange = (event) => {
+		this.setState({
+			[event.target.name]: event.target.value
+		})
+	}
 	render() {
 		return(
 			<div className='RegisterLoginForm'>
@@ -12,6 +30,8 @@ export default class RegisterLoginForm extends Component {
 							type='text'
 							name='name'
 							placeholder='enter name'
+							value={this.state.name}
+							onChange={this.handleChange}
 						/>
 					</div>
 					<div>
@@ -20,6 +40,8 @@ export default class RegisterLoginForm extends Component {
 							type='text'
 							name='city'
 							placeholder='enter city'
+							value={this.state.city}
+							onChange={this.handleChange}
 						/>
 					</div>
 					<div>
@@ -28,6 +50,8 @@ export default class RegisterLoginForm extends Component {
 							type='text'
 							name='state'
 							placeholder='enter state'
+							value={this.state.state}
+							onChange={this.handleChange}
 						/>
 					</div>
 					<div>
@@ -36,6 +60,8 @@ export default class RegisterLoginForm extends Component {
 							type='text'
 							name='country'
 							placeholder='enter country'
+							value={this.state.country}
+							onChange={this.handleChange}
 						/>
 					</div>
 					<div>
@@ -44,6 +70,8 @@ export default class RegisterLoginForm extends Component {
 							type='email'
 							name='email'
 							placeholder='enter email'
+							value={this.state.email}
+							onChange={this.handleChange}
 						/>
 					</div>
 					<div>
@@ -52,6 +80,8 @@ export default class RegisterLoginForm extends Component {
 							type='password'
 							name='password'
 							placeholder='enter password'
+							value={this.state.password}
+							onChange={this.handleChange}
 						/>
 					</div>
 					<div>
@@ -59,6 +89,8 @@ export default class RegisterLoginForm extends Component {
 						<input
 							type='checkbox'
 							name='shelter'
+							value={this.state.shelter}
+							onChange={this.handleChange}
 						/>
 					</div>
 					<button>Submit</button>
