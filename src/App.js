@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import './App.css';
 import RegisterLoginForm from './RegisterLoginForm'
+import DogContainer from './DogContainer'
+import Home from './Home'
 
 export default class App extends Component {
    constructor() {
@@ -8,7 +10,9 @@ export default class App extends Component {
 
       this.state = {
          loggedIn: false,
-         loggedInName: ''
+         loggedInName: '',
+         currentView: 'home',
+
       }
    }
    register = async (registerInfo) => {
@@ -31,7 +35,8 @@ export default class App extends Component {
          if(registerResponse.status === 201) {
             this.setState({
                loggedIn: true,
-               loggedInName: registerJson.data.name
+               loggedInName: registerJson.data.name,
+               currentView: 'home'
             })
          }
 
@@ -60,7 +65,8 @@ export default class App extends Component {
          if(loginResponse.status === 200) {
             this.setState({
                loggedIn: true,
-               loggedInName: loginJson.data.name
+               loggedInName: loginJson.data.name,
+               currentView: 'home'
             })
          }
       } catch(err) {
@@ -81,7 +87,8 @@ export default class App extends Component {
          if(logoutResponse.status === 200) {
             this.setState({
                loggedIn: false,
-               loggedInName: ''
+               loggedInName: '',
+               currentView: 'login'
             })
          }
       } catch(err) {
@@ -89,15 +96,60 @@ export default class App extends Component {
          console.error(err)
       }
    }
+   setViews = async (newView) => {
+      this.setState({
+         currentView: newView
+      })
+   }
    render() {
       return (
          <div className="App">
-            <h1>Hello, World!</h1>
-            <span onClick={this.logout}>Logout</span>
-            <RegisterLoginForm 
-               register={this.register}
-               login={this.login}
-            />
+            <React.Fragment>
+               <div className="Navigation">
+                  {
+                     this.state.loggedIn === true
+                     ?
+                     <p>Logged in as&nbsp;<b>{this.state.loggedInName}</b></p>
+                     :
+                     null
+                  }
+                  <span onClick={() => this.setViews('home')}>Home</span>
+                  <span onClick={() => this.setViews('allDogs')}>Dogs</span>
+                  {
+                     this.state.loggedIn === true
+                     ?
+                     <span onClick={this.logout}>Log out</span>
+                     :
+                     <span onClick={() => this.setViews('login')}>Log In</span>
+                  }
+               </div>
+               <div className="Pages">
+                  {
+                     this.state.currentView === 'home'
+                     ?
+                     <Home />
+                     :
+                     null
+                  }
+                  {
+                     this.state.currentView === 'allDogs'
+                     ?
+                     <DogContainer />
+                     :
+                     null
+                  }
+                  {
+                     this.state.currentView === 'login'
+                     ?
+                     <RegisterLoginForm
+                        register={this.register}
+                        login={this.login}
+                     />
+                     :
+                     null
+                  }
+               </div>
+            </React.Fragment>
          </div>
       )
    }
