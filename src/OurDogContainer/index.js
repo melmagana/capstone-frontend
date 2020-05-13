@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import AddDogForm from '../AddDogForm'
+import EditDogForm from '../EditDogForm'
 import OurDogList from '../OurDogList'
 
 export default class OurDogContainer extends Component {
@@ -63,6 +64,44 @@ export default class OurDogContainer extends Component {
 			console.error(err)
 		}
 	}
+	editDog = (idOfDogToEdit) => {
+		console.log('idOfDogToEdit', idOfDogToEdit)
+		this.setState({
+			idOfDogToEdit: idOfDogToEdit,
+			currentView: 'edit'
+		})
+	}
+	updateDog = async (updateDogInfo) => {
+		const url =process.env.REACT_APP_API_URL + '/api/v1/dogs/' + this.state.idOfDogToEdit
+
+		try {
+			const updateDogResponse = await fetch(url, {
+				credentials: 'include',
+				method: 'PUT',
+				body: JSON.stringify(updateDogInfo),
+				headers: {
+					'Content-Type': 'application/json'
+				}
+			})
+			console.log('updateDogResponse', updateDogResponse)
+			const updateDogJson = await updateDogResponse.json()
+			console.log('updateDogJson', updateDogJson)
+
+			if(updateDogResponse.status === 200) {
+				const dogs = this.state.dogs
+				const indexOfDogBeingUpdated = dogs.findIndex(dog => dog.id === this.state.idOfDogToEdit)
+				dogs[indexOfDogBeingUpdated] = updateDogJson.data
+				this.setState({
+					dogs: dogs,
+					currentView: 'show'
+				})
+			}
+
+		} catch(err) {
+			console.error('Error trying to update dog with API')
+			console.error(err)
+		}
+	}
 	setViews = (newView) => {
 		this.setState({
 			currentView: newView
@@ -71,13 +110,17 @@ export default class OurDogContainer extends Component {
 	render() {
 		return (
 			<div className="OurDogContainer">
-			<span onClick={() => this.setViews('add')}>Add Dog</span>
 			<span onClick={() => this.setViews('show')}>Our Dogs</span>
+			<span onClick={() => this.setViews('add')}>Add Dog</span>
+			<span onClick={() => this.setViews('edit')}>Edit Dog</span>
 			<h2>Our Dogs</h2>
 			{
 				this.state.currentView === 'show'
 				?
-				<OurDogList dogs={this.state.dogs}/>
+				<OurDogList 
+					dogs={this.state.dogs}
+					editDog={this.editDog}
+				/>
 				:
 				null
 			}
@@ -85,6 +128,17 @@ export default class OurDogContainer extends Component {
 				this.state.currentView === 'add'
 				?
 				<AddDogForm createDog={this.createDog}/>
+				:
+				null
+			}
+			{
+				this.state.currentView === 'edit'
+				?
+				<EditDogForm
+					key={this.state.idOfDogToEdit}
+					dogToEdit={this.state.dogs.find((dog) => dog.id === this.state.idOfDogToEdit)}
+					updateDog={this.updateDog}
+				/>
 				:
 				null
 			}

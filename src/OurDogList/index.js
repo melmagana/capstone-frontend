@@ -10,6 +10,9 @@ export default function OurDogList(props) {
 				{dog.breed}
 				<br/>
 				{dog.status}
+				<button onClick={() => props.editDog(dog.id)}>
+					Edit
+				</button>
 			</div>
 		)
 	})
