@@ -3,6 +3,7 @@ import './App.css';
 import RegisterLoginForm from './RegisterLoginForm'
 import DogContainer from './DogContainer'
 import Home from './Home'
+import OurDogContainer from './OurDogContainer'
 
 export default class App extends Component {
    constructor() {
@@ -10,6 +11,7 @@ export default class App extends Component {
 
       this.state = {
          loggedIn: false,
+         shelter: false,
          loggedInName: '',
          currentView: 'home',
 
@@ -36,7 +38,8 @@ export default class App extends Component {
             this.setState({
                loggedIn: true,
                loggedInName: registerJson.data.name,
-               currentView: 'home'
+               currentView: 'home',
+               shelter: registerJson.data.shelter
             })
          }
 
@@ -66,7 +69,8 @@ export default class App extends Component {
             this.setState({
                loggedIn: true,
                loggedInName: loginJson.data.name,
-               currentView: 'home'
+               currentView: 'home',
+               shelter: loginJson.data.shelter
             })
          }
       } catch(err) {
@@ -118,7 +122,16 @@ export default class App extends Component {
                   {
                      this.state.loggedIn === true
                      ?
-                     <span onClick={this.logout}>Log out</span>
+                     <React.Fragment>
+                     {
+                        this.state.shelter
+                        ?
+                        <span onClick={() => this.setViews('ourDogs')}>Our Dogs</span>
+                        :
+                        null
+                     }
+                        <span onClick={this.logout}>Log out</span>
+                     </React.Fragment>
                      :
                      <span onClick={() => this.setViews('login')}>Log In</span>
                   }
@@ -135,6 +148,13 @@ export default class App extends Component {
                      this.state.currentView === 'allDogs'
                      ?
                      <DogContainer />
+                     :
+                     null
+                  }
+                  {
+                     this.state.currentView === 'ourDogs'
+                     ?
+                     <OurDogContainer />
                      :
                      null
                   }

@@ -3,14 +3,26 @@ import React from 'react'
 export default function DogList(props) {
 	const dogs = props.dogs.map(dog => {
 		return(
-			<li key={dog.id}>
+			<div key={dog.id}>
 				{dog.name}
-			</li>
+				<br/>
+				{dog.age}
+				<br/>
+				{dog.breed}
+				<br/>
+				{dog.gender}
+				<br/>
+				{dog.personality_type}
+				<br/>
+				{dog.date_arrived}
+				<br/>
+				{dog.status}
+			</div>
 		)
 	})
 	return(
 		<div className="DogList">
-			<ul>{dogs}</ul>
+			<div>{dogs}</div>
 		</div>
 	)
 }
