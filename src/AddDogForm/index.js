@@ -11,8 +11,28 @@ export default class AddDogForm extends Component {
 			gender: '',
 			personality_type: '',
 			date_arrived: '',
-			status: ''
+			status: '',
+			image: ''
 		}
+	}
+	selectedFileHandler = async (event) => {
+		console.log(event.target.files)
+		const files = event.target.files
+		const data = new FormData()
+		const url = 'https://api.cloudinary.com/v1_1/drviocy9n/image/upload'
+		data.append('file', files[0])
+		data.append('upload_preset', 'tfiodrbf')
+
+		const uploadImageResponse = await fetch(url, {
+			method: 'POST',
+			body: data
+		})
+		
+		const file = await uploadImageResponse.json()
+
+		this.setState({
+			image: file.secure_url
+		})
 	}
 	handleChange = (event) => {
 		this.setState({
@@ -80,10 +100,10 @@ export default class AddDogForm extends Component {
 					/>
 					<label>Date Arrived</label>
 					<input
-						type='date'
+						type='text'
 						name='date_arrived'
 						value={this.state.date_arrived}
-						placeholder='enter date arrived'
+						placeholder='YYYY-MM-DD'
 						onChange={this.handleChange}
 					/>
 					<label>Status</label>
@@ -93,6 +113,12 @@ export default class AddDogForm extends Component {
 						value={this.state.status}
 						placeholder='enter status'
 						onChange={this.handleChange}
+					/>
+					<label>Image</label>
+					<input
+						type='file'
+						name='image'
+						onChange={this.selectedFileHandler}
 					/>
 					<button type="Submit">Add Dog</button>
 				</form>

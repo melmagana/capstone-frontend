@@ -72,10 +72,10 @@ export default class EditDogForm extends Component {
 					/>
 					<label>Date Arrived</label>
 					<input
-						type='date'
+						type='text'
 						name='date_arrived'
 						value={this.state.date_arrived}
-						placeholder='enter personality type'
+						placeholder='YYYY-MM-DD'
 						onChange={this.handleChange}
 					/>
 					<label>Status</label>

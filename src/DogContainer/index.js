@@ -6,7 +6,8 @@ export default class DogContainer extends Component {
 		super()
 
 		this.state = {
-			dogs: []
+			dogs: [],
+			show: ''
 		}
 	}
 	componentDidMount() {
@@ -27,6 +28,31 @@ export default class DogContainer extends Component {
 			})
 		} catch(err) {
 			console.error('Error getting dogs from API')
+			console.error(err)
+		}
+	}
+	showDog = async (dogInfo) => {
+		console.log('id for showDog', dogInfo)
+
+		try {
+			const url = process.env.REACT_APP_API_URL + '/api/v1/dogs/' + dogInfo
+			const showDogResponse = await fetch(url, {
+				credentials: 'include',
+				method: 'GET',
+				headers: {
+					'Content-Type': 'application/json'
+				}
+			})
+			console.log('showDogResponse', showDogResponse)
+			const showDogJson = await showDogResponse.json()
+			console.log('showDogJson', showDogJson)
+
+			this.setState({
+				show: showDogJson.data
+			})
+
+		} catch(err) {
+			console.error('Error getting dog information')
 			console.error(err)
 		}
 	}

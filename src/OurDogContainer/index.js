@@ -135,7 +135,6 @@ export default class OurDogContainer extends Component {
 			<div className="OurDogContainer">
 			<span onClick={() => this.setViews('show')}>Our Dogs</span>
 			<span onClick={() => this.setViews('add')}>Add Dog</span>
-			<span onClick={() => this.setViews('edit')}>Edit Dog</span>
 			<h2>Our Dogs</h2>
 			{
 				this.state.currentView === 'show'

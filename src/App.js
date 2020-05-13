@@ -117,8 +117,8 @@ export default class App extends Component {
                      :
                      null
                   }
-                  <span onClick={() => this.setViews('home')}>Home</span>
-                  <span onClick={() => this.setViews('allDogs')}>Dogs</span>
+                  <span onClick={() => this.setViews('home')}>Home</span> | 
+                  <span onClick={() => this.setViews('allDogs')}> Dogs</span> |
                   {
                      this.state.loggedIn === true
                      ?
@@ -126,14 +126,14 @@ export default class App extends Component {
                      {
                         this.state.shelter
                         ?
-                        <span onClick={() => this.setViews('ourDogs')}>Our Dogs</span>
+                        <span onClick={() => this.setViews('ourDogs')}> Our Dogs |</span>
                         :
                         null
                      }
-                        <span onClick={this.logout}>Log out</span>
+                        <span onClick={this.logout}> Log out</span>
                      </React.Fragment>
                      :
-                     <span onClick={() => this.setViews('login')}>Log In</span>
+                     <span onClick={() => this.setViews('login')}> Log In</span>
                   }
                </div>
                <div className="Pages">

@@ -17,6 +17,8 @@ export default function DogList(props) {
 				{dog.date_arrived}
 				<br/>
 				{dog.status}
+				<br/>
+				<img src={dog.image} alt="dog"/>
 			</div>
 		)
 	})
