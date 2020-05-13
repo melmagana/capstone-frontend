@@ -33,6 +33,29 @@ export default class OurDogContainer extends Component {
 			console.error(err)
 		}
 	}
+	deleteDog = async (idOfDogToDelete) => {
+		const url = process.env.REACT_APP_API_URL + '/api/v1/dogs/' + idOfDogToDelete
+
+		try {
+			const deleteDogResponse = await fetch(url, {
+				credentials: 'include',
+				method: 'DELETE'
+			})
+			console.log('deleteDogResponse', deleteDogResponse)
+			const deleteDogJson = await deleteDogResponse.json()
+			console.log('deleteDogJson', deleteDogJson)
+
+			if(deleteDogResponse.status === 200) {
+				this.setState({
+					dogs: this.state.dogs.filter(dog => dog.id !== idOfDogToDelete)
+				})
+			}
+
+		} catch(err) {
+			console.error('Error deleting dog with API')
+			console.error(err)
+		}
+	}
 	createDog = async (dogToAdd) => {
 		console.log('here is the dog you are trying to add')
 		console.log(dogToAdd)
@@ -120,6 +143,7 @@ export default class OurDogContainer extends Component {
 				<OurDogList 
 					dogs={this.state.dogs}
 					editDog={this.editDog}
+					deleteDog={this.deleteDog}
 				/>
 				:
 				null

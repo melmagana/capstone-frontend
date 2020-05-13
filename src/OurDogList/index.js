@@ -13,6 +13,9 @@ export default function OurDogList(props) {
 				<button onClick={() => props.editDog(dog.id)}>
 					Edit
 				</button>
+				<button onClick={() => props.deleteDog(dog.id)}>
+					Delete
+				</button>
 			</div>
 		)
 	})
