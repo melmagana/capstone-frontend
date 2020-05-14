@@ -1,27 +1,32 @@
 import React from 'react'
+import './index.css'
 
 export default function DogList(props) {
 	const dogs = props.dogs.map(dog => {
 		return(
 			<div key={dog.id}>
-				{dog.name}
-				<br/>
-				{dog.age}
-				<br/>
-				{dog.breed}
-				<br/>
-				{dog.gender}
-				<br/>
-				{dog.personality_type}
-				<br/>
-				{dog.date_arrived}
-				<br/>
-				{dog.status}
-				<br/>
-				<img src={dog.image} alt="dog"/>
-				<button onClick={() => props.addInterest(dog.id)}>
-					Interested
-				</button>
+				<div className="Card">
+					<img src={dog.image} alt="pup"/>
+					<div className="InfoContainer">
+						<h4>{dog.name}</h4>
+						<p className="Meta">
+							{dog.breed} &mdash; {dog.gender}
+						</p>
+						<hr/>
+						<p className="Data">
+							<br/>
+							<b>AGE</b> &mdash; {dog.age}
+							<br/>
+							<b>TYPE</b> &mdash; {dog.personality_type}
+							<br/>
+							<b>ARRIVED</b> &mdash;{dog.date_arrived}
+							<br/>
+							<b>STATUS</b> &mdash; {dog.status}
+							<br/>
+							<b>SHELTER</b> &mdash; {dog.shelter.name}
+						</p>
+					</div>
+				</div>
 			</div>
 		)
 	})

@@ -1,0 +1,47 @@
+div > .Card {
+	/*order: 2px solid red;*/
+	width: 200px;
+}
+
+div > .Card > img {
+	width: 200px;
+}
+
+div > .Card > .InfoContainer {
+	/*border: 2px solid grey;*/
+}
+
+div > .Card > .InfoContainer > h4 {
+	font-family: Avenir;
+	font-size: 15pt;
+	font-weight: 900;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: -10px;
+}
+
+div > .Card > .InfoContainer > .Meta {
+	color: gray;
+	font-family: Avenir;
+	font-size: 8pt;
+	font-weight: 500;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	text-align: center;
+	margin-bottom: 18px;
+}
+
+div > .Card > .InfoContainer > .Data {
+	font-family: Avenir;
+	font-size: 10pt;
+	letter-spacing: 1px;
+	text-transform: capitalize;
+	text-align: center;
+	/*border: 2px solid yellow;*/
+}
+
+.DogList {
+	border: 2px solid blue;
+}

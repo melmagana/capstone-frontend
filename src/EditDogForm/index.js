@@ -13,8 +13,28 @@ export default class EditDogForm extends Component {
 			gender: props.dogToEdit.gender,
 			personality_type: props.dogToEdit.personality_type,
 			date_arrived: props.dogToEdit.date_arrived,
-			status: props.dogToEdit.status
+			status: props.dogToEdit.status,
+			image: props.dogToEdit.image
 		}
+	}
+	selectedFileHandler = async (event) => {
+		console.log(event.target.files)
+		const files = event.target.files
+		const data = new FormData()
+		const url = 'https://api.cloudinary.com/v1_1/drviocy9n/image/upload'
+		data.append('file', files[0])
+		data.append('upload_preset', 'tfiodrbf')
+
+		const uploadImageResponse = await fetch(url, {
+			method: 'POST',
+			body: data
+		})
+		
+		const file = await uploadImageResponse.json()
+
+		this.setState({
+			image: file.secure_url
+		})
 	}
 	handleChange = (event) => {
 		this.setState({
@@ -85,6 +105,12 @@ export default class EditDogForm extends Component {
 						value={this.state.status}
 						placeholder='enter status'
 						onChange={this.handleChange}
+					/>
+					<label>Image</label>
+					<input
+						type='file'
+						name='image'
+						onChange={this.selectedFileHandler}
 					/>
 					<button type='Submit'>Update Dog</button>
 				</form>

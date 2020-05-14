@@ -6,8 +6,7 @@ export default class DogContainer extends Component {
 		super()
 
 		this.state = {
-			dogs: [],
-			show: ''
+			dogs: []
 		}
 	}
 	componentDidMount() {
@@ -28,31 +27,6 @@ export default class DogContainer extends Component {
 			})
 		} catch(err) {
 			console.error('Error getting dogs from API')
-			console.error(err)
-		}
-	}
-	addInterest = async (dogId) => {
-		try {
-			const url = process.env.REACT_APP_API_URL + '/api/v1/dogs/interests/' + dogId
-			const addInterestResponse = await fetch(url, {
-				credentials: 'include',
-				method: 'POST'
-			})
-			console.log('addInterestResponse', addInterestResponse)
-			const addInterestJson = await addInterestResponse.json()
-			console.log('addInterestJson', addInterestJson)
-
-			if(addInterestResponse.status === 200) {
-				const dogs = this.state.dogs
-				dogs.push(addInterestJson.data)
-
-				this.setState({
-					dogs:dogs
-				})
-			}
-
-		} catch(err) {
-			console.error('Error adding interest with API')
 			console.error(err)
 		}
 	}
@@ -87,7 +61,6 @@ export default class DogContainer extends Component {
 				<h2>All Dogs</h2>
 				<DogList 
 					dogs={this.state.dogs}
-					addInterest={this.addInterest}
 				/>
 			</div>
 		)

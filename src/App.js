@@ -147,7 +147,7 @@ export default class App extends Component {
                   {
                      this.state.currentView === 'allDogs'
                      ?
-                     <DogContainer />
+                     <DogContainer login={this.login}/>
                      :
                      null
                   }
