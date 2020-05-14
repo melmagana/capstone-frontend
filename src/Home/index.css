@@ -1,0 +1,33 @@
+.Home {
+	display: flex;
+}
+.Home > aside {
+	width: 500px;
+}
+.Home > aside > h2 {
+	font-family: Bodoni;
+	font-size: 45pt;
+}
+.Home > aside > p {
+	font-family: Avenir;
+}
+.Home > aside > .BoldText {
+	font-weight: bold;
+	font-size: 12pt;
+	letter-spacing: .5px;
+}
+.Home > .Two > img {
+	width: 571px;
+	margin-left: 100px;
+	margin-right: 30px;
+}
+.Home > .Three > img {
+	width: 300px;
+}
+.Home > .Three > .ThreeText {
+	background-color: #fab617;
+	font-family: Baskerville;
+	padding: 20px;
+	width: 260px;
+	height: 332px;
+}
