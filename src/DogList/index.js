@@ -19,6 +19,9 @@ export default function DogList(props) {
 				{dog.status}
 				<br/>
 				<img src={dog.image} alt="dog"/>
+				<button onClick={() => props.addInterest(dog.id)}>
+					Interested
+				</button>
 			</div>
 		)
 	})
