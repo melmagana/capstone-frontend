@@ -1,12 +1,15 @@
 import React, {Component} from 'react'
 import DogList from '../DogList'
+import ShowDogContainer from '../ShowDogContainer'
 
 export default class DogContainer extends Component {
 	constructor() {
 		super()
 
 		this.state = {
-			dogs: []
+			dogs: [],
+			showDogData: '',
+			currentView: 'index'
 		}
 	}
 	componentDidMount() {
@@ -30,11 +33,11 @@ export default class DogContainer extends Component {
 			console.error(err)
 		}
 	}
-	showDog = async (dogInfo) => {
-		console.log('id for showDog', dogInfo)
+	getShowDog = async (id) => {
+		console.log('id for showDog', id)
 
 		try {
-			const url = process.env.REACT_APP_API_URL + '/api/v1/dogs/' + dogInfo
+			const url = process.env.REACT_APP_API_URL + '/api/v1/dogs/' + id
 			const showDogResponse = await fetch(url, {
 				credentials: 'include',
 				method: 'GET',
@@ -47,7 +50,7 @@ export default class DogContainer extends Component {
 			console.log('showDogJson', showDogJson)
 
 			this.setState({
-				show: showDogJson.data
+				showDogData: showDogJson.data
 			})
 
 		} catch(err) {
@@ -55,13 +58,41 @@ export default class DogContainer extends Component {
 			console.error(err)
 		}
 	}
+	view = (id) => {
+		if (this.state.currentView === 'index') {
+			this.getShowDog(id)
+
+			this.setState({
+				currentView: 'showPage'
+			})
+		} else {
+			this.setState({
+				currentView: 'index',
+				showDogData: ''
+			})
+		}
+	}
+	closeModal = () => {
+		this.view()
+	}
 	render() {
 		return(
 			<div className='DogContainer'>
 				<h2>All Dogs</h2>
 				<DogList 
 					dogs={this.state.dogs}
+					getShowDog={this.showDog}
+					showDogData={this.state.showDogData}
+					view={this.view}
 				/>
+				{
+					this.state.currentView === 'showPage'
+					&&
+					<ShowDogContainer 
+						showDogData={this.state.showDogData}
+						closeModal={this.closeModal}
+					/>
+				}
 			</div>
 		)
 	}

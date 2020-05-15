@@ -1,38 +1,26 @@
 import React from 'react'
-import './index.css'
+import {Card, Image} from 'semantic-ui-react'
+
 
 export default function DogList(props) {
 	const dogs = props.dogs.map(dog => {
+		console.log(props.dogs)
 		return(
-			<div key={dog.id}>
-				<div className="Card">
-					<img src={dog.image} alt="pup"/>
-					<div className="InfoContainer">
-						<h4>{dog.name}</h4>
-						<p className="Meta">
-							{dog.breed} &mdash; {dog.gender}
-						</p>
-						<hr/>
-						<p className="Data">
-							<br/>
-							<b>AGE</b> &mdash; {dog.age}
-							<br/>
-							<b>TYPE</b> &mdash; {dog.personality_type}
-							<br/>
-							<b>ARRIVED</b> &mdash;{dog.date_arrived}
-							<br/>
-							<b>STATUS</b> &mdash; {dog.status}
-							<br/>
-							<b>SHELTER</b> &mdash; {dog.shelter.name}
-						</p>
-					</div>
-				</div>
-			</div>
+			<Card key={dog.id}>
+				<Card.Content>
+					<Image
+						onClick={() => props.view(dog.id)}  
+						src={dog.image}
+					/>
+				</Card.Content>
+			</Card>
 		)
 	})
 	return(
-		<div className="DogList">
-			<div>{dogs}</div>
+		<div className="MySongList">
+			<Card.Group>
+				{dogs}
+			</Card.Group>
 		</div>
 	)
 }
