@@ -4,7 +4,8 @@
 }
 
 .App > .Navigation {
-	text-align: right;
+	display: flex;
+	justify-content: flex-end;
 	/*border: 2px solid gray;*/
 	margin-bottom: 30px;
 }
@@ -14,9 +15,16 @@
 	font-weight: bold;
 	/*border: 2px solid red;*/
 	margin-left: 20px;
+	margin-right: 20px;
 	cursor: pointer;
 }
 
 .App > .Navigation > span:hover {
 	font-style: italic;
+}
+
+.App > .Navigation > .LoggedMessage {
+	font-family: Bodini;
+	/*border: 1px solid blue;*/
+	margin-left: 20px;
 }

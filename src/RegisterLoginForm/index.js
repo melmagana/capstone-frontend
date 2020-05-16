@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import './index.css'
 
 export default class RegisterLoginForm extends Component {
 	constructor() {
@@ -49,41 +50,41 @@ export default class RegisterLoginForm extends Component {
 					&&
 					<div>
 						<div>
-							<label>Name</label>
+							
 							<input
 								type='text'
 								name='name'
-								placeholder='enter name'
+								placeholder='name'
 								value={this.state.name}
 								onChange={this.handleChange}
 							/>
 						</div>
 						<div>
-							<label>City</label>
+							
 							<input
 								type='text'
 								name='city'
-								placeholder='enter city'
+								placeholder='city'
 								value={this.state.city}
 								onChange={this.handleChange}
 							/>
 						</div>
 						<div>
-							<label>State</label>
+							
 							<input
 								type='text'
 								name='state'
-								placeholder='enter state'
+								placeholder='state'
 								value={this.state.state}
 								onChange={this.handleChange}
 							/>
 						</div>
 						<div>
-							<label>Country</label>
+							
 							<input
 								type='text'
 								name='country'
-								placeholder='enter country'
+								placeholder='country'
 								value={this.state.country}
 								onChange={this.handleChange}
 							/>
@@ -91,21 +92,21 @@ export default class RegisterLoginForm extends Component {
 					</div>
 				}
 					<div>
-						<label>Email</label>
+						
 						<input
 							type='email'
 							name='email'
-							placeholder='enter email'
+							placeholder='email'
 							value={this.state.email}
 							onChange={this.handleChange}
 						/>
 					</div>
 					<div>
-						<label>Password</label>
+						
 						<input
 							type='password'
 							name='password'
-							placeholder='enter password'
+							placeholder='password'
 							value={this.state.password}
 							onChange={this.handleChange}
 						/>
@@ -126,7 +127,7 @@ export default class RegisterLoginForm extends Component {
 						</div>
 					}
 					<button type='Submit'>
-						{this.state.action === 'Login' ? 'Log In' : 'Sign Up'}
+						{this.state.action === 'Login' ? 'LOG IN' : 'SIGN UP'}
 					</button>
 				</form>
 				{

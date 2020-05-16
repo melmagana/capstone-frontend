@@ -1,0 +1,18 @@
+.ShowDogContainer {
+	margin: 30px;
+	display: flex;
+}
+
+.ShowDogContainer > .One > img {
+	width: 300px;
+}
+
+.ShowDogContainer > .Two > h1 {
+	font-family: Bodini;
+	font-size: 30pt;
+}
+
+
+.ShowDogContainer > .Two {
+	margin-left: 30px;
+}

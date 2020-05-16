@@ -3,10 +3,10 @@ import {Card, Image} from 'semantic-ui-react'
 
 
 export default function DogList(props) {
-	const dogs = props.dogs.map(dog => {
+	const dogs = props.dogs.map((dog, i) => {
 		console.log(props.dogs)
 		return(
-			<Card key={dog.id}>
+			<Card key={dog.id + "-" + i}>
 				<Card.Content>
 					<Image
 						onClick={() => props.view(dog.id)}  
@@ -17,7 +17,7 @@ export default function DogList(props) {
 		)
 	})
 	return(
-		<div className="MySongList">
+		<div className="DogList">
 			<Card.Group>
 				{dogs}
 			</Card.Group>

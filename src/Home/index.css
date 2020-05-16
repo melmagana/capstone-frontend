@@ -3,32 +3,41 @@
 }
 .Home > aside {
 	width: 500px;
+	/*border: 2px solid blue;*/
+	margin-right: 80px;
+}
+.Home > aside > h1 {
+	font-family: Bodini;
+	font-size: 40pt;
+	letter-spacing: 1px;
+	margin-bottom: 60px;
 }
 .Home > aside > h2 {
-	font-family: Bodoni;
-	font-size: 45pt;
+	font-family: Avenir;
+	font-size: 12pt;
+	font-weight: 900;
+	letter-spacing: 1px;
+	margin-top: 40px;
+	margin-bottom: 10px;
 }
 .Home > aside > p {
-	font-family: Avenir;
+	line-height: 25px;
 }
-.Home > aside > .BoldText {
-	font-weight: bold;
-	font-size: 12pt;
-	letter-spacing: .5px;
+.Home > main {
+	display: flex;
 }
-.Home > .Two > img {
-	width: 571px;
-	margin-left: 100px;
-	margin-right: 30px;
+.Home > main > .One > img {
+	width: 400px;
+	margin-right: 20px;
 }
-.Home > .Three > img {
-	width: 300px;
+.Home > main > .Two > img {
+	width: 350px;
 }
-.Home > .Three > .ThreeText {
-	background-color: #fab617;
-	font-family: Baskerville;
+.Home > main > .Two > p {
+	background-color: #c4eee6;
+	line-height: 25px;
 	padding: 20px;
-	margin-top: 27px;
-	width: 300px;
-	height: 320px;
+	margin-top: 18px;
+	width: 350px;
+	height: 343px;
 }

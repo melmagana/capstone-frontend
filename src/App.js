@@ -4,6 +4,7 @@ import RegisterLoginForm from './RegisterLoginForm'
 import DogContainer from './DogContainer'
 import Home from './Home'
 import OurDogContainer from './OurDogContainer'
+import UserInterests from './UserInterests'
 
 export default class App extends Component {
    constructor() {
@@ -14,6 +15,7 @@ export default class App extends Component {
          shelter: false,
          loggedInName: '',
          currentView: 'home',
+         currentUser: {}
 
       }
    }
@@ -39,7 +41,8 @@ export default class App extends Component {
                loggedIn: true,
                loggedInName: registerJson.data.name,
                currentView: 'home',
-               shelter: registerJson.data.shelter
+               shelter: registerJson.data.shelter,
+               currentUser: registerJson.data
             })
          }
 
@@ -70,7 +73,8 @@ export default class App extends Component {
                loggedIn: true,
                loggedInName: loginJson.data.name,
                currentView: 'home',
-               shelter: loginJson.data.shelter
+               shelter: loginJson.data.shelter,
+               currentUser: loginJson.data
             })
          }
       } catch(err) {
@@ -117,12 +121,19 @@ export default class App extends Component {
                      ?
                      <React.Fragment>
                      {
-                        this.state.shelter
+                        this.state.shelter === true
                         ?
                         <span onClick={() => this.setViews('ourDogs')}>Our Dogs</span>
                         :
                         null
                      }
+                     {
+                           this.state.shelter === false
+                           ?
+                           <span onClick={() => this.setViews('myInterests')}>My Interests</span>
+                           :
+                           null
+                        }
                         <span onClick={this.logout}>Log out</span>
                      </React.Fragment>
                      :
@@ -131,7 +142,7 @@ export default class App extends Component {
                   {
                      this.state.loggedIn === true
                      ?
-                     <p>Logged in as&nbsp;<b>{this.state.loggedInName}</b></p>
+                     <div className="LoggedMessage">Logged in as&nbsp;<b>{this.state.loggedInName}</b></div>
                      :
                      null
                   }
@@ -147,7 +158,20 @@ export default class App extends Component {
                   {
                      this.state.currentView === 'allDogs'
                      ?
-                     <DogContainer login={this.login}/>
+                     <DogContainer 
+                        loggedIn={this.state.loggedIn}
+                        currentUser={this.state.currentUser}
+                        shelter={this.state.shelter}
+                     />
+                     :
+                     null
+                  }
+                  {
+                     this.state.currentView === 'myInterests'
+                     ?
+                     <UserInterests 
+                        currentUser={this.state.currentUser}
+                     />
                      :
                      null
                   }

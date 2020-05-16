@@ -58,6 +58,58 @@ export default class DogContainer extends Component {
 			console.error(err)
 		}
 	}
+	addInterest = async (id) => {
+		try {
+			const url = process.env.REACT_APP_API_URL + '/api/v1/dogs/interests/' + id
+			const addInterestResponse = await fetch(url, {
+				credentials: 'include',
+				method: 'POST'
+			})
+			console.log('addInterestResponse', addInterestResponse)
+			const addInterestJson = await addInterestResponse.json()
+			console.log('addInterestJson', addInterestJson)
+
+			if(addInterestResponse.status === 200) {
+				const dogs = this.state.dogs
+				console.log(dogs)
+
+				this.setState({
+					dogs: dogs
+				})
+			}
+
+		} catch(err) {
+			console.error('Error adding interest to dog')
+			console.error(err)
+		}
+	}
+	deleteInterest = async (id) => {
+		try {
+			const url = process.env.REACT_APP_API_URL + '/api/v1/dogs/interests/' + id
+			const deleteInterestResponse = await fetch(url, {
+				credentials: 'include',
+				method: 'DELETE',
+				headers: {
+					'Content-Type': 'application/json'
+				}
+			})
+			console.log('deleteInterestResponse', deleteInterestResponse)
+			const deleteInterestJson = await deleteInterestResponse.json()
+			console.log('deleteInterestJson', deleteInterestJson)
+
+			if(deleteInterestResponse.status === 200) {
+				const dogs = this.state.dogs
+
+				this.setState({
+					dogs: dogs
+				})
+			}
+
+		} catch(err) {
+			console.error('Error deleting interest in dog')
+			console.error(err)
+		}
+	}
 	view = (id) => {
 		if (this.state.currentView === 'index') {
 			this.getShowDog(id)
@@ -76,6 +128,8 @@ export default class DogContainer extends Component {
 		this.view()
 	}
 	render() {
+		console.log('props in DogContainer')
+		console.log(this.props)
 		return(
 			<div className='DogContainer'>
 				<h2>All Dogs</h2>
@@ -91,6 +145,11 @@ export default class DogContainer extends Component {
 					<ShowDogContainer 
 						showDogData={this.state.showDogData}
 						closeModal={this.closeModal}
+						addInterest={this.addInterest}
+						deleteInterest={this.deleteInterest}
+						currentUser={this.props.currentUser}
+						shelter={this.props.shelter}
+						loggedIn={this.props.loggedIn}
 					/>
 				}
 			</div>

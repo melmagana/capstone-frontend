@@ -1,0 +1,95 @@
+.RegisterLoginForm {
+	
+}
+.RegisterLoginForm > h2 {
+	font-family: Bodini;
+	font-size: 30pt;
+	letter-spacing: 1px;
+	width: 700px;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	padding-left: 40px;
+}
+.RegisterLoginForm > form {
+	width: 700px;
+	margin: 0 auto;
+}
+.RegisterLoginForm > form > div > input[type=email] {
+	background: none;
+	color: #a64445;
+	font-family: Avenir;
+	font-size: 12pt;
+	letter-spacing: 1px;
+	width : 100%;
+	height: 60px;
+	border-style: none;
+	border-bottom: 2px solid #a64445;
+	margin-bottom: 10px;
+	padding-left: 40px;
+}
+.RegisterLoginForm > form > div > input[type=email]::placeholder {
+	color: #a64445;
+	text-transform: uppercase;
+}
+.RegisterLoginForm > form > div > input[type=password] {
+	background: none;
+	color: #a64445;
+	font-family: Avenir;
+	font-size: 12pt;
+	letter-spacing: 1px;
+	width : 100%;
+	height: 60px;
+	border-style: none;
+	border-bottom: 2px solid #a64445;
+	margin-bottom: 30px;
+	padding-left: 40px;
+}
+.RegisterLoginForm > form > div > input[type=password]::placeholder {
+	color: #a64445;
+	text-transform: uppercase;
+}
+.RegisterLoginForm > form > div > div > input[type=text] {
+	background: none;
+	color: #a64445;
+	font-family: Avenir;
+	font-size: 12pt;
+	letter-spacing: 1px;
+	width : 100%;
+	height: 60px;
+	border-style: none;
+	border-bottom: 2px solid #a64445;
+	margin-bottom: 10px;
+	padding-left: 40px;
+}
+.RegisterLoginForm > form > div > div > input[type=text]::placeholder {
+	color: #a64445;
+	text-transform: uppercase;
+}
+*:focus {
+	outline: none;
+}
+.RegisterLoginForm > form > button {
+	background-color: #a64445;
+	color: white;
+	font-family: Avenir;
+	font-size: 12pt;
+	font-weight: bold;
+	letter-spacing: 2px;
+	width: 100%;
+	height: 60px;
+	border: none;
+	cursor: pointer;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #a64445;
+  transition: background-color 5000s ease-in-out 0s;
+}

@@ -50,7 +50,8 @@ export default class AddDogForm extends Component {
 			gender: '',
 			personality_type: '',
 			date_arrived: '',
-			status: ''
+			status: '',
+			image: ''
 		})
 	}
 	render() {
