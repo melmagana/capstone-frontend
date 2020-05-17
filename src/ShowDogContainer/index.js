@@ -7,7 +7,7 @@ export default class ShowDogContainer extends Component {
 		super(props)
 
 		this.state = {
-
+			addButton: true
 		}
 	}
 	handleInterestClick = () => {
@@ -19,6 +19,19 @@ export default class ShowDogContainer extends Component {
 	handleRemoveInterestClick = () => {
 		console.log('remove interest button clicked')
 		this.props.deleteInterest(this.props.showDogData.id)
+	}
+	switchButton = () => {
+		if(this.state.addButton === true) {
+			this.handleInterestClick()
+			this.setState({
+				addButton: false
+			})
+		} else {
+			this.handleRemoveInterestClick()
+			this.setState({
+				addButton: true
+			})
+		}
 	}
 	render() {
 		console.log('this is props in ShowDogContainer')
@@ -45,8 +58,14 @@ export default class ShowDogContainer extends Component {
 											this.props.shelter === false
 											?
 											<React.Fragment>
-												<Button onClick={this.handleInterestClick}>Add Interest</Button>
-												<Button onClick={this.handleRemoveInterestClick}>Delete Interest</Button>
+												{
+													this.state.addButton === true
+													?
+													<Button onClick={this.switchButton}>Interested</Button>
+													:
+													<Button onClick={this.switchButton}>Delete Interest</Button>
+
+												}
 											</React.Fragment>
 											:
 											null
