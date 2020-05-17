@@ -11,8 +11,9 @@
 }
 
 .App > .Navigation > span {
-	font-family: Bodini;
-	font-weight: bold;
+	font-family: 'Abril Fatface', cursive;
+	font-weight: 900;
+	letter-spacing: 1px;
 	/*border: 2px solid red;*/
 	margin-left: 20px;
 	margin-right: 20px;
@@ -24,7 +25,13 @@
 }
 
 .App > .Navigation > .LoggedMessage {
-	font-family: Bodini;
+	font-family: 'Playfair Display', serif;
+	letter-spacing: .5px;
 	/*border: 1px solid blue;*/
 	margin-left: 20px;
+}
+
+.App > .Navigation > .LoggedMessage > b {
+	font-family: 'Abril Fatface', cursive;
+	letter-spacing: 1px;
 }

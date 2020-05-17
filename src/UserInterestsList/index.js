@@ -1,5 +1,6 @@
 import React from 'react'
 import {Card, Image} from 'semantic-ui-react'
+import './index.css'
 
 
 export default function UserInterestsList(props) {
@@ -8,7 +9,12 @@ export default function UserInterestsList(props) {
 		return(
 			<Card key={interest.id}>
 				<Card.Content>
-					{interest.name}
+					<h1>{interest.name}</h1>
+					<Image src={interest.image}/>
+					{interest.shelter.name}
+					<Card.Meta>
+						{interest.shelter.city}, {interest.shelter.state}, {interest.shelter.country}
+					</Card.Meta>
 				</Card.Content>
 			</Card>
 		)

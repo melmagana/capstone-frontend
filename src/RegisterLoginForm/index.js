@@ -43,8 +43,9 @@ export default class RegisterLoginForm extends Component {
 	render() {
 		return(
 			<div className='RegisterLoginForm'>
-				<h2>{this.state.action}</h2>
 				<form onSubmit={this.handleSubmit}>
+				<h2>{this.state.action}</h2>
+				<div className='Message'>{this.props.message}</div>
 				{
 					this.state.action === 'Register'
 					&&
@@ -116,31 +117,31 @@ export default class RegisterLoginForm extends Component {
 						&&
 						<div>
 							<div>
-								<label>Shelter?</label>
 								<input
 									type='checkbox'
 									name='shelter'
 									value={this.state.shelter}
 									onChange={this.handleChange}
 								/>
+								<label>Shelter?</label>
 							</div>
 						</div>
+					}
+					{
+						this.state.action === 'Login'
+						?
+						<p>
+							Not a member? Sign Up <span onClick={this.switchForm}>Here</span>
+						</p>
+						:
+						<p>
+							Already a member? Log In <span onClick={this.switchForm}>Here</span>
+						</p>
 					}
 					<button type='Submit'>
 						{this.state.action === 'Login' ? 'LOG IN' : 'SIGN UP'}
 					</button>
 				</form>
-				{
-					this.state.action === 'Login'
-					?
-					<p>
-						Not a member? Sign Up <span onClick={this.switchForm}>Here</span>
-					</p>
-					:
-					<p>
-						Already a member? Log In <span onClick={this.switchForm}>Here</span>
-					</p>
-				}
 			</div>
 		)
 	}

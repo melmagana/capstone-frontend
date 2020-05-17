@@ -140,17 +140,25 @@ export default class DogContainer extends Component {
 					view={this.view}
 				/>
 				{
-					this.state.currentView === 'showPage'
-					&&
-					<ShowDogContainer 
-						showDogData={this.state.showDogData}
-						closeModal={this.closeModal}
-						addInterest={this.addInterest}
-						deleteInterest={this.deleteInterest}
-						currentUser={this.props.currentUser}
-						shelter={this.props.shelter}
-						loggedIn={this.props.loggedIn}
-					/>
+					this.props.loggedIn === true
+					?
+					<React.Fragment>
+						{
+							this.state.currentView === 'showPage'
+							&&
+							<ShowDogContainer 
+								showDogData={this.state.showDogData}
+								closeModal={this.closeModal}
+								addInterest={this.addInterest}
+								deleteInterest={this.deleteInterest}
+								currentUser={this.props.currentUser}
+								shelter={this.props.shelter}
+								loggedIn={this.props.loggedIn}
+							/>
+						}
+					</React.Fragment>
+					:
+					null
 				}
 			</div>
 		)

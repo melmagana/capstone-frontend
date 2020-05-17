@@ -15,7 +15,8 @@ export default class App extends Component {
          shelter: false,
          loggedInName: '',
          currentView: 'home',
-         currentUser: {}
+         currentUser: {},
+         message: ''
 
       }
    }
@@ -42,7 +43,12 @@ export default class App extends Component {
                loggedInName: registerJson.data.name,
                currentView: 'home',
                shelter: registerJson.data.shelter,
-               currentUser: registerJson.data
+               currentUser: registerJson.data,
+
+            })
+         } else {
+            this.setState({
+               message: registerJson.message
             })
          }
 
@@ -76,6 +82,10 @@ export default class App extends Component {
                shelter: loginJson.data.shelter,
                currentUser: loginJson.data
             })
+         } else{
+            this.setState({
+               message: loginJson.message
+            })
          }
       } catch(err) {
          console.error('Error trying to login with API')
@@ -107,6 +117,11 @@ export default class App extends Component {
    setViews = async (newView) => {
       this.setState({
          currentView: newView
+      })
+   }
+   setMessages = async(newMessage) => {
+      this.setState({
+         message: newMessage
       })
    }
    render() {
@@ -188,6 +203,7 @@ export default class App extends Component {
                      <RegisterLoginForm
                         register={this.register}
                         login={this.login}
+                        message={this.state.message}
                      />
                      :
                      null

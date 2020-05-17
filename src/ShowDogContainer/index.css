@@ -8,8 +8,9 @@
 }
 
 .ShowDogContainer > .Two > h1 {
-	font-family: Bodini;
+	font-family: 'Abril Fatface', cursive;
 	font-size: 30pt;
+	letter-spacing: 3px;
 }
 
 
