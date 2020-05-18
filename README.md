@@ -17,3 +17,10 @@ An app that allows shelters to post info about dogs available for adoption
 * My Interests saves dogs that User is interested in
 * Regular User can add an interest through the show dog modal.
 * Only a regular user will be able to see interest and delete button.
+
+# Wireframes
+![alt text](https://i.imgur.com/jIE96lI.png "WF")
+![alt text](https://i.imgur.com/HsdEEal.png "WF")
+![alt text](https://i.imgur.com/UD90595.png "WF")
+![alt text](https://i.imgur.com/fzehtRs.png "WF")
+![alt text](https://i.imgur.com/cuNNTc1.png "WF")
