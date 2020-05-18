@@ -1,3 +1,6 @@
+# About
+An app that allows shelters to post info about dogs available for adoption
+
 # User Story
 * User arrives to homepage
 * User will see navigation at top
