@@ -14,7 +14,7 @@
 .RegisterLoginForm > form > h2 {
 	font-family: 'Abril Fatface', cursive;
 	font-size: 30pt;
-	letter-spacing: 3px;
+	letter-spacing: 2px;
 	width: 700px;
 	margin: 0 auto;
 	margin-bottom: 40px;
@@ -22,34 +22,24 @@
 	padding-top: 30px;
 }
 .RegisterLoginForm > form {
-	background-color: white;
 	width: 700px;
 	margin: 0 auto;
-	border-radius: 5px;
-	box-shadow:
-  		0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-  		0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-  		0 12.5px 10px rgba(0, 0, 0, 0.06),
-  		0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-  		0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-  		0 100px 80px rgba(0, 0, 0, 0.12);
-	/*border: 2px solid blue;*/
+	border: 2px solid #005ef7;
 }
 .RegisterLoginForm > form > div > input[type=email] {
 	background: none;
-	color: #a64445;
+	color: #005ef7;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 10pt;
 	letter-spacing: 1px;
 	width : 100%;
 	height: 40px;
-	border-style: none;
-	border-bottom: 1px solid #a64445;
-	margin-bottom: 10px;
+	border: 2px solid #005ef7;
+	border-bottom: none;
 	padding-left: 20px;
 }
 .RegisterLoginForm > form > div > input[type=email]::placeholder {
-	color: #a64445;
+	color: #005ef7;
 	text-transform: uppercase;
 }
 .RegisterLoginForm > form > div {
@@ -58,46 +48,73 @@
 }
 .RegisterLoginForm > form > div > input[type=password] {
 	background: none;
-	color: #a64445;
+	color: #005ef7;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 10pt;
 	letter-spacing: 1px;
 	width: 100%;
 	height: 40px;
-	border-style: none;
-	border-bottom: 1px solid #a64445;
+	border: 2px solid #005ef7;
 	margin-bottom: 30px;
 	padding-left: 20px;
 }
 .RegisterLoginForm > form > div > input[type=password]::placeholder {
-	color: #a64445;
+	color: #005ef7;
 	text-transform: uppercase;
 }
-.RegisterLoginForm > form > div > div > input[type=text] {
+.RegisterLoginForm > form > div > .Group > div > input[type=text] {
 	background: none;
-	color: #a64445;
+	color: #005ef7;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 10pt;
 	letter-spacing: 1px;
 	width : 100%;
 	height: 40px;
-	border-style: none;
-	border-bottom: 1px solid #a64445;
-	margin-bottom: 10px;
+	border: 2px solid #005ef7;
+	border-bottom: none;
+	border-top: none;
 	padding-left: 20px;
 }
+.RegisterLoginForm > form > div >  div > input[type=text] {
+	background: none;
+	color: #005ef7;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 10pt;
+	letter-spacing: 1px;
+	width : 100%;
+	height: 40px;
+	border: 2px solid #005ef7;
+	padding-left: 20px;
+}
+.RegisterLoginForm > form > div > .Group >  div > input[type=text] {
+	width: 200px;
+}
+.RegisterLoginForm > form > div > .Group > .City > input[type=text] {
+	border-right: none;
+}
+.RegisterLoginForm > form > div > .Group > .State > input[type=text] {
+	border-right: none;
+}
 .RegisterLoginForm > form > div > div > input[type=text]::placeholder {
-	color: #a64445;
+	color: #005ef7;
 	text-transform: uppercase;
 }
+.RegisterLoginForm > form > div > .Group > div > input[type=text]::placeholder {
+	color: #005ef7;
+	text-transform: uppercase;
+}
+.RegisterLoginForm > form > div > .Group {
+	display: flex;
+	justify-content: space-between;
+}
 .RegisterLoginForm > form > div > div > input[type=checkbox]{
-	transform: scale(2);
+	transform: scale(1.5);
 	padding: 10px;
 	margin-bottom: 30px;
 	margin-left: 10px;
 }
 .RegisterLoginForm > form > div > div > label{
-	color: #a64445;
+	color: #005ef7;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 10pt;
 	letter-spacing: 1px;
@@ -108,17 +125,23 @@
 	outline: none;
 }
 .RegisterLoginForm > form > button {
-	background-color: #a64445;
-	color: white;
+	background: none;
+	color: #005ef7;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 12pt;
 	font-weight: bold;
 	letter-spacing: 2px;
-	width: 100%;
-	height: 60px;
-	border: none;
+	border: 2px solid #005ef7;
+	width: 600px;
+	height: 40px;
 	cursor: pointer;
-	border-radius: 0 0 5px 5px;
+	margin-right: 50px;
+	margin-left: 50px;
+	margin-bottom: 30px;
+}
+.RegisterLoginForm > form > button:hover {
+	background-color: #005ef7;
+	color: white;
 }
 
 input:-webkit-autofill,
@@ -130,7 +153,7 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  -webkit-text-fill-color: #a64445;
+
   transition: background-color 5000s ease-in-out 0s;
 }
 .RegisterLoginForm > form > p {

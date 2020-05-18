@@ -60,35 +60,37 @@ export default class RegisterLoginForm extends Component {
 								onChange={this.handleChange}
 							/>
 						</div>
-						<div>
-							
-							<input
-								type='text'
-								name='city'
-								placeholder='city'
-								value={this.state.city}
-								onChange={this.handleChange}
-							/>
-						</div>
-						<div>
-							
-							<input
-								type='text'
-								name='state'
-								placeholder='state'
-								value={this.state.state}
-								onChange={this.handleChange}
-							/>
-						</div>
-						<div>
-							
-							<input
-								type='text'
-								name='country'
-								placeholder='country'
-								value={this.state.country}
-								onChange={this.handleChange}
-							/>
+						<div className="Group">
+							<div className="City">
+								
+								<input
+									type='text'
+									name='city'
+									placeholder='city'
+									value={this.state.city}
+									onChange={this.handleChange}
+								/>
+							</div>
+							<div className="State">
+								
+								<input
+									type='text'
+									name='state'
+									placeholder='state'
+									value={this.state.state}
+									onChange={this.handleChange}
+								/>
+							</div>
+							<div>
+								
+								<input
+									type='text'
+									name='country'
+									placeholder='country'
+									value={this.state.country}
+									onChange={this.handleChange}
+								/>
+							</div>
 						</div>
 					</div>
 				}
@@ -127,6 +129,9 @@ export default class RegisterLoginForm extends Component {
 							</div>
 						</div>
 					}
+					<button type='Submit'>
+						{this.state.action === 'Login' ? 'LOG IN' : 'SIGN UP'}
+					</button>
 					{
 						this.state.action === 'Login'
 						?
@@ -138,9 +143,6 @@ export default class RegisterLoginForm extends Component {
 							Already a member? Log In <span onClick={this.switchForm}>Here</span>
 						</p>
 					}
-					<button type='Submit'>
-						{this.state.action === 'Login' ? 'LOG IN' : 'SIGN UP'}
-					</button>
 				</form>
 			</div>
 		)

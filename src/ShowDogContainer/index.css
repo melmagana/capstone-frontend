@@ -11,9 +11,46 @@
 	font-family: 'Abril Fatface', cursive;
 	font-size: 30pt;
 	letter-spacing: 3px;
+	margin-bottom: 0;
 }
 
+.ShowDogContainer > .Two > small {
+	color: #babec3;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	font-size: 10pt;
+	text-transform: uppercase;
+	letter-spacing: .5px;
+}
+
+.ShowDogContainer > .Two > hr {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.ShowDogContainer > .Two > p {
+	font-family: 'Open Sans', sans-serif;
+	margin-bottom: 0;
+	letter-spacing: .5px;
+}
 
 .ShowDogContainer > .Two {
 	margin-left: 30px;
+}
+
+.ShowDogContainer > .Two > h2 {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 15pt;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+.ShowDogContainer > .Two > p > span {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: .5px;
+}
+.ShowDogContainer > .Two > button {
+	margin-top: 30px;
 }

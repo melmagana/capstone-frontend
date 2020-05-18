@@ -106,7 +106,8 @@ export default class App extends Component {
             this.setState({
                loggedIn: false,
                loggedInName: '',
-               currentView: 'login'
+               currentView: 'login',
+               message: ''
             })
          }
       } catch(err) {

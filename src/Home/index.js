@@ -30,13 +30,12 @@ export default function Home() {
 				<div className="Two">
 					<img src="https://images.unsplash.com/photo-1537151641189-e685b67326c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1498&q=80" alt="Corgi"/>
 					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-						Pellentesque at leo tortor. Aliquam malesuada, felis eget 
+						<h2>Meet Homeless Dogs</h2> 
+						Thousands of dogs in shelters are waiting for a home. 
+						Open your home and heart to a vulnerable dog today. Aliquam malesuada, felis eget 
 						eleifend dignissim, est velit tempor quam, at posuere ipsum 
 						lacus eget neque. Curabitur eu sodales lectus. Nullam eros 
-						metus, finibus eget placerat eu, posuere non leo. Praesent 
-						placerat erat tortor, sed fringilla ex tincidunt laoreet. 
-						Praesent leo dolor, pretium ac finibus ac, tincidunt id elit.
+						metus, finibus eget placerat eu, posuere non leo. 
 					</p>
 				</div>
 			</main>

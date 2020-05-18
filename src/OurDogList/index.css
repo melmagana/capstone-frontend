@@ -1,0 +1,89 @@
+.OurDogList {
+	width: 900px;
+	margin: 0 auto;
+	/*border: 2px solid #005ef7;*/
+}
+.OurDogList > h1 {
+	font-family: 'Abril Fatface', cursive;
+	font-size: 30pt;
+	letter-spacing: 2px;
+	margin: 0 auto;
+	margin-bottom: 60px;
+	padding-top: 10px;
+}
+
+.Key {
+	/*border: 2px solid red;*/
+	margin-bottom: 20px;
+	display: flex;
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-bottom: 30px;
+	border-bottom: 2px solid #005ef7;
+}
+
+.Key > .One {
+	/*border: 2px solid green;*/
+	position: relative;
+	width: 100px;
+	height: 100px;
+	overflow: hidden;
+}
+
+.Key > .One img {
+	position: absolute;
+  	left: 50%;
+  	top: 50%;
+  	height: auto;
+  	width: 100%;
+  	-webkit-transform: translate(-50%,-50%);
+      	-ms-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+}
+
+.Key > .Two {
+	/*border: 2px solid orange;*/
+	margin-left: 30px;
+}
+.Key > .Two > h1 {
+	font-family: 'Abril Fatface', cursive;
+	letter-spacing: 1px;
+	margin-bottom: 0;
+}
+.Key > .Two > small {
+	color: grey;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 10pt;
+	text-transform: uppercase;
+}
+.Key > .Two > p {
+	font-family: 'Open Sans', sans-serif;
+	margin-top: 10px;
+}
+.Key > .Two > p > span {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+}
+.Admin {
+	margin-left: 30px;
+	position: absolute;
+	right: 280px;
+}
+
+.Key > .Admin > button {
+	background: none;
+	color: #005ef7;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 12pt;
+	font-weight: bold;
+	letter-spacing: 2px;
+	border: 2px solid #005ef7;
+	text-transform: uppercase;
+	cursor: pointer;
+	width: 200px;
+	height: 40px;
+}
+
+.Edit {
+	margin-right: 10px;
+}

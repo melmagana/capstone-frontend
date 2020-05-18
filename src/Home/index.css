@@ -35,10 +35,17 @@
 	width: 350px;
 }
 .Home > main > .Two > p {
+	font-family: 'Open Sans', sans-serif;
 	background-color: #c4eee6;
 	line-height: 25px;
 	padding: 20px;
 	margin-top: 28px;
 	width: 350px;
 	height: 333px;
+}
+.Home > main > .Two > p > h2 {
+	font-family: 'Abril Fatface', cursive;
+	font-size: 20pt;
+	letter-spacing: 1px;
+	margin-bottom: 20px;
 }

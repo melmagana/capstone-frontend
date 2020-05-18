@@ -48,8 +48,17 @@ export default class ShowDogContainer extends Component {
 							</div>
 							<div className="Two">
 								<h1>{this.props.showDogData.name}</h1>
+								<small>{this.props.showDogData.breed}</small>
 								<hr/>
-								<p>{this.props.showDogData.gender}.</p>
+								<p><span>Age &mdash;</span> {this.props.showDogData.age}</p>
+								<p><span>Gender &mdash;</span> {this.props.showDogData.gender}</p>
+								<p><span>Personality &mdash;</span> {this.props.showDogData.personality_type}</p>
+								<p><span>Status &mdash;</span> {this.props.showDogData.status}</p>
+								<h2>Located @</h2>
+								<hr/>
+								<p><span>Shelter &mdash;</span> {this.props.showDogData.shelter.name}</p>
+								<p><span>City/State &mdash;</span> {this.props.showDogData.shelter.city}, {this.props.showDogData.shelter.state}</p>
+								<p><span>Country &mdash;</span> {this.props.showDogData.shelter.country}</p>
 								{
 									this.props.loggedIn === true
 									?
@@ -59,7 +68,7 @@ export default class ShowDogContainer extends Component {
 											?
 											<React.Fragment>
 												{
-													this.state.addButton === true
+													this.state.addButton
 													?
 													<Button onClick={this.switchButton}>Interested</Button>
 													:

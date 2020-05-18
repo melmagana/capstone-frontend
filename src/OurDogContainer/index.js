@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import AddDogForm from '../AddDogForm'
 import EditDogForm from '../EditDogForm'
 import OurDogList from '../OurDogList'
+import './index.css'
 
 export default class OurDogContainer extends Component {
 	constructor() {
@@ -133,9 +134,10 @@ export default class OurDogContainer extends Component {
 	render() {
 		return (
 			<div className="OurDogContainer">
-			<span onClick={() => this.setViews('show')}>Our Dogs</span>
-			<span onClick={() => this.setViews('add')}>Add Dog</span>
-			<h2>Our Dogs</h2>
+				<div className="Navigation">
+					<span onClick={() => this.setViews('show')}>List</span>
+					<span onClick={() => this.setViews('add')}>Add Dog</span>
+				</div>
 			{
 				this.state.currentView === 'show'
 				?

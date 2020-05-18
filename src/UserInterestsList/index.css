@@ -1,4 +1,39 @@
-h1 {
+.Key > .Content > h1 {
+	margin-bottom: 0;
 	font-family: 'Abril Fatface', cursive;
 	letter-spacing: 2px;
+}
+.Key > .Content > small {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 10pt;
+	text-transform: uppercase;
+	letter-spacing: .5px;
+	color: #babec3;
+}
+.Key > .Content > h2 {
+	font-size: 14pt;
+	font-weight: 600;
+	font-family: 'Open Sans', sans-serif;
+	text-transform: uppercase;
+	margin-top: 10px;
+	margin-bottom: 0;
+	color: #c4c8cc;
+}
+.Key > .Content > hr {
+	margin-top: 0;
+	margin-bottom: 10px;
+	border-top: 1px solid #c4c8cc;
+	border-bottom: none;
+}
+.Key > .Content > p {
+	font-family: 'Open Sans', sans-serif;
+	letter-spacing: .5px;
+}
+.Key > .Content > p > span {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+.Key > .Content > .Located {
+	margin-top: 30px;
 }

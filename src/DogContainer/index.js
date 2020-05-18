@@ -3,13 +3,13 @@ import DogList from '../DogList'
 import ShowDogContainer from '../ShowDogContainer'
 
 export default class DogContainer extends Component {
-	constructor() {
-		super()
+	constructor(props) {
+		super(props)
 
 		this.state = {
 			dogs: [],
 			showDogData: '',
-			currentView: 'index'
+			currentView: 'index',
 		}
 	}
 	componentDidMount() {
@@ -72,7 +72,6 @@ export default class DogContainer extends Component {
 			if(addInterestResponse.status === 200) {
 				const dogs = this.state.dogs
 				console.log(dogs)
-
 				this.setState({
 					dogs: dogs
 				})

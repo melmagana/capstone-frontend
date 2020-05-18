@@ -1,0 +1,147 @@
+.AddDogForm {
+	border: 2px solid #005ef7;
+	width: 1000px;
+	margin: 0 auto;
+	padding: 30px;
+}
+.AddDogForm > form {
+	/*border: 2px solid yellow;*/
+	width: 800px;
+	margin: 0 auto;
+}
+.AddDogForm > form > h2 {
+	font-family: 'Abril Fatface', cursive;
+	font-size: 30pt;
+	letter-spacing: 2px;
+	margin: 0 auto;
+	margin-bottom: 40px;
+	padding-top: 15px;
+}
+.AddDogForm > form > div > input[type=text] {
+	background: none;
+	color: #005ef7;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 10pt;
+	letter-spacing: 1px;
+	width : 100%;
+	height: 50px;
+	border: 2px solid #005ef7;
+	border-bottom: none;
+	padding-left: 20px;
+}
+.AddDogForm > form > div > input[type=text]::placeholder {
+	color: #005ef7;
+	text-transform: uppercase;
+}
+.AddDogForm > form > .GroupOne > div > input[type=text] {
+	background: none;
+	color: #005ef7;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 10pt;
+	letter-spacing: 1px;
+	width : 266.75px;
+	height: 50px;
+	border: 2px solid #005ef7;
+	border-bottom: none;
+	padding-left: 20px;
+}
+.AddDogForm > form > .GroupOne > div > input[type=text]::placeholder {
+	color: #005ef7;
+	text-transform: uppercase;
+}
+.AddDogForm > form > .GroupOne > .Age > input[type=text] {
+	border-right: none;
+}
+.AddDogForm > form > .GroupOne > .Personality > input[type=text] {
+	border-right: none;
+}
+.AddDogForm > form > .GroupTwo > div > input[type=text] {
+	background: none;
+	color: #005ef7;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 10pt;
+	letter-spacing: 1px;
+	width : 400px;
+	height: 50px;
+	border: 2px solid #005ef7;
+	padding-left: 20px;
+}
+.AddDogForm > form > .GroupTwo > div > input[type=text]::placeholder {
+	color: #005ef7;
+	text-transform: uppercase;
+}
+.AddDogForm > form > .GroupTwo > .Status > input[type=text] {
+	border-right: none;
+}
+.AddDogForm > form > button {
+	background: none;
+	color: #005ef7;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 12pt;
+	font-weight: bold;
+	letter-spacing: 2px;
+	border: 2px solid #005ef7;
+	width: 100%;
+	height: 50px;
+	cursor: pointer;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+.AddDogForm > form > button:hover {
+	background-color: #005ef7;
+	color: white;
+}
+.AddDogForm > form > div > input[type=file] {
+	position: absolute;
+  	z-index: -1;
+  	/*top: 6px;*/
+  	padding-top: 12px;
+  	height: 50px;
+  	width: 100%;
+  	left: 0;
+  	font-size: 15px;
+  	border: 2px solid #005ef7;
+  	border-top: none;
+  	color: #005ef7;
+  	text-transform: uppercase;
+}
+
+.AddDogForm > form > .ButtonWrap > .NewButton {
+	font-family: 'Open Sans', sans-serif;
+	display: inline-block;
+    /*padding: 15px 12px;*/ 
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 15px;
+    cursor: pointer;
+    width: 100px;
+    height: 50px;
+    background-color: #efe7d8;
+    font-size: 10pt;
+    letter-spacing: 1px;
+    color: #005ef7;
+    border: 2px solid #005ef7;
+    border-top: none;
+    border-right: none;
+    text-transform: uppercase;
+}
+.AddDogForm > form > .ButtonWrap > .NewButton:hover {
+	color: white;
+	background-color: #005ef7;
+}
+.AddDogForm > form > .ButtonWrap {
+	position: relative;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+
+  transition: background-color 5000s ease-in-out 0s;
+}
